@@ -1,0 +1,6 @@
+### Re-write module
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !^/(css|js|api)
+RewriteRule ^/?$ index.php [L]
+RewriteRule ^regist$ content-regist.php [L]
+RewriteRule ^video/(.*)/?$ video.php?cid=$1 [L]

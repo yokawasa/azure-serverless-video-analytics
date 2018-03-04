@@ -1,0 +1,76 @@
+body {
+    padding-top: 60px;
+}
+
+.starter-template {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+textarea {
+    width: 520px;
+    height: 70px;
+}
+
+td.timecol {
+    width: 150px;
+    padding: 10px 2px 10px 7px;
+}
+td.clickme {
+    width: 540px;
+    padding: 10px 10px 10px 2px;
+}
+
+.colmask {
+    clear:both;
+    float:left;
+    width:100%;         /* width of whole page */
+    overflow:hidden;        /* This chops off any overhanging divs */
+}
+
+/* common column settings */
+.colleft {
+    float:left;
+    width:100%;
+    position:relative;
+}
+
+.col,
+.col1, 
+.col2 {
+    float:left;
+    position:relative;
+    padding:0 0 0 0;
+    overflow:hidden;
+}
+
+.scrollbox {
+    padding: 0 0 10px 10px;
+    height: 600px;
+    overflow-y: scroll;
+    /*background-color: #fef3b9;*/
+    /*background-color: #feefa0;*/
+    /*background-color: #e3e46e;*/
+    /* background-color: #DCDCDC; */
+}
+
+/* 2 Column (double page) settings */
+.doublepage {
+    background:#fff;        /* right column background colour */
+}
+.doublepage .colleft {
+    right:48%;          /* right column width */
+    background:#fff;        /* left column background colour */
+}
+.doublepage .col1 {
+    width:45%;          /* left column content width (column width minus left and right padding) */
+    left:52%;           /* right column width plus left column left padding */
+}
+.doublepage .col2 {
+    width: 50%;         /* right column content width (column width minus left and right padding) */
+    left:52%;           /* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+video::-webkit-media-text-track-display {
+    font-size: 50%;
+}

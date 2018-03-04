@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "webHookType": "genericJson",
+      "name": "req"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "asset",
+      "collectionName": "meta",
+      "createIfNotExists": false,
+      "connection": "CosmosDB_Connection",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

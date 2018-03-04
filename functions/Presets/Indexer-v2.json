@@ -1,0 +1,17 @@
+{
+  "Version": "1.0",
+  "Features": [
+    {
+      "Options": {
+        "Formats": [
+          "Sami",
+          "WebVtt",
+          "TTML"
+        ],
+        "Language": "EnUs",
+        "Type": "RecoOptions"
+      },
+      "Type": "SpReco"
+    }
+  ]
+}

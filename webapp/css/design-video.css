@@ -1,0 +1,98 @@
+body {
+    padding-top: 30px;
+}
+
+.starter-template {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.topmenu {
+    font-size: 120%;
+}
+
+textarea {
+    width: 95%;
+    height: 70px;
+}
+
+td.bgcolor-odd {
+    background-color: #f5f5f5;
+}
+td.bgcolor-even {
+    background-color: #e8e8e8;
+}
+
+td.timecol {
+    width: 160px;
+    padding: 10px 2px 10px 10px;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+td.clickme {
+    width: 500px;
+    padding: 10px 10px 10px 2px;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.colmask {
+    clear:both;
+    float:left;
+    width:100%;         /* width of whole page */
+    overflow:hidden;        /* This chops off any overhanging divs */
+}
+
+/* common column settings */
+.colleft {
+    float:left;
+    width:100%;
+    position:relative;
+}
+
+.col,
+.col1, 
+.col2 {
+    float:left;
+    position:relative;
+    padding:0 0 0 0;
+    overflow:hidden;
+}
+
+.scrollbox {
+    /*padding: 0 0 10px 10px;*/
+    height: 650px;
+    overflow-y: scroll;
+    /*background-color: #fef3b9;*/
+    /*background-color: #feefa0;*/
+    /*background-color: #e3e46e;*/
+    /*background-color: #DCDCDC;*/
+}
+
+/* 2 Column (double page) settings */
+.doublepage {
+    background:#fff;        /* right column background colour */
+}
+.doublepage .colleft {
+    right:48%;          /* right column width */
+    background:#fff;        /* left column background colour */
+}
+.doublepage .col1 {
+    width:45%;          /* left column content width (column width minus left and right padding) */
+    left:51%;           /* right column width plus left column left padding */
+}
+.doublepage .col2 {
+    width: 50%;         /* right column content width (column width minus left and right padding) */
+    left:52%;           /* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+video::-webkit-media-text-track-display {
+    font-size: 20%;
+}
+
+em {
+    background:yellow;
+    font-size: 100%;
+    font-style: normal;
+}
