@@ -8,5 +8,5 @@ expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 version=`cat $cwd/../VERSION`
 tag="$version"
 echo "tag=$tag"
-docker build -t video-cognitive-analytics:$tag $cwd/..
+docker build -t serverless-video-analytics:$tag $cwd/..
 } 2>&1 | tee build.log

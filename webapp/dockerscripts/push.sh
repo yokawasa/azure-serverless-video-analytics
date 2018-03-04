@@ -17,7 +17,7 @@ docker login -u "$1" -p "$2"
 version=`cat $cwd/../VERSION`
 tag="$version"
 echo "tag=$tag"
-docker tag video-cognitive-analytics:$tag "$1"/video-cognitive-analytics:$tag
-docker push "$1"/video-cognitive-analytics:$tag
+docker tag serverless-video-analytics:$tag "$1"/serverless-video-analytics:$tag
+docker push "$1"/serverless-video-analytics:$tag
 docker logout
 } 2>&1 | tee push.log

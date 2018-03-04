@@ -2,7 +2,7 @@
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/videocoganalytics.conf
+. $cwd/videoanalytics.conf
 
 AZURE_SEARCH_SERVICE_NAME=$AzureSearchServiceName
 AZURE_SEARCH_ADMIN_KEY=$AzureSearchAdminKey

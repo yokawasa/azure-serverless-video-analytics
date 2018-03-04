@@ -9,7 +9,7 @@
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/../../scripts/videocoganalytics.conf
+. $cwd/../../scripts/videoanalytics.conf
 
 version=`cat $cwd/../VERSION`
 tag="$version"
@@ -21,4 +21,4 @@ docker run -v $cwd/..:/var/www/html --rm \
     -e VideoUploadEndpoint=$VideoUploadEndpoint \
     -e AzureSearchServiceName=$AzureSearchServiceName \
     -e AzureSearchAdminKey=$AzureSearchAdminKey \
-    -p 8080:8080 -p 2222:2222 -it video-cognitive-analytics:$tag
+    -p 8080:8080 -p 2222:2222 -it serverless-video-analytics:$tag
