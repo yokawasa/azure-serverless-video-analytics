@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "logicAppName": {
+      "value": "serverlessvideoanalytics"
+    },
+    "functionsDeploymentResourceGroup": {
+      "value": "RG-amstt-poc"
+    },    
+    "functionsDeploymentName": {
+      "value": "videocogsearch"
+    },
+    "sourceAssetsStorageAccountName": {
+      "value": "videocogsearch"
+    },
+    "uploadVideoWatchContainer": {
+      "value": "uploads"
+    },
+    "webhookSubscribeEndpoint": {
+      "value": "https://videocogsearch.azurewebsites.net/api/http-to-translator-queue?code=zwQ6aDsDvNvE/XDZheXuaZ7LMhTgJ1UT/bExSqXQMDSsKr9fXa/JZQ=="
+    }    
+  }
+}
