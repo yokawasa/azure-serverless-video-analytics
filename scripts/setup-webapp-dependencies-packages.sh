@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x -e
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
