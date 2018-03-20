@@ -27,6 +27,9 @@ See also [Application Overview Video @ Youtube](https://www.youtube.com/watch?v=
 ## Deployment Procedures
 - [How to deploy the demo application](docs/HOW-TO-DEPLOY.md)
 
+## Other Links
+- [Seminar slides: Serverless App Development with Azure Functions & Logic App (In Japanese)](https://www.slideshare.net/yokawasa/azure-functionslogic-app-89994585)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/yokawasa/azure-serverless-video-analytics
