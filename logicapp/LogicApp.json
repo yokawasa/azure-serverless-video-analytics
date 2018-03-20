@@ -33,13 +33,6 @@
                 "description": "Azure Storage Account Name for source assets."
             }
         },
-        "uploadVideoWatchContainer": {
-            "type": "string",
-            "defaultValue": "upload",
-            "metadata": {
-                "description": "Azure Storage Container Name to watch source media assets."
-            }
-        },
         "webhookSubscribeEndpoint": {
             "type": "string",
             "defaultValue": "https://FUNCAPPNAME.azurewebsites.net/api/http-to-translator-queue?code=FUNCTIONSTOKEN",
@@ -285,12 +278,11 @@
                                 "method": "get",
                                 "path": "/datasets/default/triggers/batch/onupdatedfile",
                                 "queries": {
-                                    "folderId": "L2ltcG9ydHM=",
+                                    "folderId": "",
                                     "maxFileCount": 10
                                 }
                             },
                             "metadata": {
-                                "L2ltcG9ydHM=": "[concat('/',parameters('uploadVideoWatchContainer'))]"
                             },
                             "recurrence": {
                                 "frequency": "Second",

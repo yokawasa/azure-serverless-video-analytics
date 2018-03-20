@@ -31,8 +31,8 @@ if (count($c) < 1) {
 
 $content_name = get_value('name', $c, $c['asset_name']);
 $content_lang = get_value('lang',$c, "en");
-$content_url =  get_value('manifest_url',$c, "");
-$caption_webvtt_url =  get_value('webvtt_url',$c, "");
+$content_url =  secure_protocol(get_value('manifest_url',$c, ""));
+$caption_webvtt_url =  secure_protocol(get_value('webvtt_url',$c, ""));
 $key_phrases =  get_value('key_phrases',$c, array());
 $subtitle_urls =  get_value('subtitle_urls',$c, array());
 ?>
@@ -105,7 +105,7 @@ $subtitle_urls =  get_value('subtitle_urls',$c, array());
                         <?php
                             foreach ($subtitle_urls as $s) {
                                 if (array_key_exists($s['lang'], $lang_name_map)) {
-                                    echo sprintf("{ src: \"%s\", srclang: \"%s\", kind: \"subtitles\", label: \"%s\" },\n",$s['webvtt_url'],$s['lang'], $lang_name_map[$s['lang']]); 
+                                    echo sprintf("{ src: \"%s\", srclang: \"%s\", kind: \"subtitles\", label: \"%s\" },\n", secure_protocol($s['webvtt_url']),$s['lang'], $lang_name_map[$s['lang']]); 
                                 }
                             }
                         ?> 

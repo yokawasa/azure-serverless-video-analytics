@@ -14,7 +14,7 @@ az webapp config appsettings set \
     AMSClientSecret=$AMSClientSecret \
     AMSStorageAccountName=$AMSStorageAccountName \
     AMSStorageAccountKey=$AMSStorageAccountKey \
-    SourceStorageConnection=$SourceStorageConnection \
+    SourceStorageConnection="DefaultEndpointsProtocol=https;AccountName=$SourceStorageAccountName;AccountKey=$SourceStorageAccountKey;EndpointSuffix=core.windows.net" \
     CosmosDB_Connection="AccountEndpoint=https://$CosmosDBAccountName.documents.azure.com:443/;AccountKey=$CosmosDBAccountKey;" \
     CosmosDBAccountName=$CosmosDBAccountName \
     CosmosDBAccountKey=$CosmosDBAccountKey \

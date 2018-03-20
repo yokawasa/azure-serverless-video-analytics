@@ -5,14 +5,14 @@ cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 . $cwd/videoanalytics.conf
 
-RESOURCE_GROUP="RG-amstt-poc"
-NAME="serverlessvideoanalytics"
+RESOURCE_GROUP=$ResourceGroup
+NAME=$FunctionsAppName
 ZIPFILE=$cwd/../functions/functions.zip
-FUNCTIONS_APP_SERVICE_PLAN=serverlessvideoanalytics
+FUNCTIONS_APP_SERVICE_PLAN=$FunctionsAppName
 
 ## Create App Service Plan (If it's App Service Plan instead of Consumption Plan)
 # az appservice plan create \
-#  --name $APP_SERVICE_PLAN \
+#  --name $FUNCTIONS_APP_SERVICE_PLAN \
 #  --resource-group $RESOURCE_GROUP
 
 ## Create Storage Account (If not yet created)
@@ -30,9 +30,9 @@ FUNCTIONS_APP_SERVICE_PLAN=serverlessvideoanalytics
 ## Create Functions App (Consumption Plan)
 az functionapp create --name $NAME \
     --resource-group $RESOURCE_GROUP \
-    --consumption-plan-location japanwest \
+    --consumption-plan-location $FunctionsAppConsumptionPlanLocation \
     --storage-account $SourceStorageAccountName
-### [NOTE] Use 'functionapp list-consumption-locations' to view available locations
+### [NOTE] Use 'az functionapp list-consumption-locations' to view available locations
 
 
 ## Zipping functions
@@ -55,7 +55,7 @@ az webapp config appsettings set \
     AMSClientSecret=$AMSClientSecret \
     AMSStorageAccountName=$AMSStorageAccountName \
     AMSStorageAccountKey=$AMSStorageAccountKey \
-    SourceStorageConnection=$SourceStorageConnection \
+    SourceStorageConnection="DefaultEndpointsProtocol=https;AccountName=$SourceStorageAccountName;AccountKey=$SourceStorageAccountKey;EndpointSuffix=core.windows.net" \
     CosmosDB_Connection="AccountEndpoint=https://$CosmosDBAccountName.documents.azure.com:443/;AccountKey=$CosmosDBAccountKey;" \
     CosmosDBAccountName=$CosmosDBAccountName \
     CosmosDBAccountKey=$CosmosDBAccountKey \

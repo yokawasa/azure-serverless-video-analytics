@@ -13,5 +13,4 @@ az webapp config appsettings set \
     AzureSearchServiceName=$AzureSearchServiceName \
     AzureSearchAdminKey=$AzureSearchAdminKey \
     SasTokenAPIEndpoint=$SasTokenAPIEndpoint \
-    SasTokenAPIKey=$SasTokenAPIKey \
-    VideoUploadEndpoint=$VideoUploadEndpoint
+    VideoUploadEndpoint="https://$SourceStorageAccountName.blob.core.windows.net/$VideoUploadingContainerName"

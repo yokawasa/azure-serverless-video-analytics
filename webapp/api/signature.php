@@ -11,7 +11,11 @@ require_once dirname(__FILE__) . '/../lib/config.php';
 $cfg = GET_CONFIG();
 
 $GET_SAS_TOKEN_API_ENDPOINT = $cfg['sas_token_api_endpoint'];
-$GET_SAS_TOKEN_API_KEY = $cfg['sas_token_api_key'];
+$sasurlarr=parse_url($GET_SAS_TOKEN_API_ENDPOINT);
+$sasparams=array();
+parse_str($sasurlarr['query'],$sasparams);
+$GET_SAS_TOKEN_API_HOST_PATH= sprintf("%s://%s%s", $sasurlarr['scheme'], $sasurlarr['host'],$sasurlarr['path']);
+$GET_SAS_TOKEN_API_KEY=$sasparams['code'];
 
 $req=$_REQUEST;
 $params = array();
@@ -50,7 +54,7 @@ if (empty($container) || empty($blob)) {
     exit;
 }
 
-$url = $GET_SAS_TOKEN_API_ENDPOINT;
+$url = $GET_SAS_TOKEN_API_HOST_PATH;
 
 $body_arr = array(
     "container" => $container,

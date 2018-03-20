@@ -3,22 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
-      "value": "serverlessvideoanalytics"
+      "value": "{logicAppName}"
     },
     "functionsDeploymentResourceGroup": {
-      "value": "RG-serverlessvideoanalytics"
+      "value": "{functionsDeploymentResourceGroup}"
     },    
     "functionsDeploymentName": {
-      "value": "serverlessvideoanalytics"
+      "value": "{functionsDeploymentName}"
     },
     "sourceAssetsStorageAccountName": {
-      "value": "serverlessvideoanalytics"
-    },
-    "uploadVideoWatchContainer": {
-      "value": "upload"
+      "value": "{sourceAssetsStorageAccountName}"
     },
     "webhookSubscribeEndpoint": {
-      "value": "https://FUNCAPPNAME.azurewebsites.net/api/http-to-translator-queue?code=FUNCTIONSTOKEN"
+      "value": "{webhookSubscribeEndpoint}"
     }    
   }
 }

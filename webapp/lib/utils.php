@@ -21,5 +21,8 @@ function substr_yymmdd($s) {
     return (strlen($s)>8) ? substr($s, 0, 8) : $s;
 }
 
+function secure_protocol($url) {
+    return str_replace("http://","https://", $url);
+}
 
 ?>

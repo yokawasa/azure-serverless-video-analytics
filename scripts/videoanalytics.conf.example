@@ -1,21 +1,49 @@
-ResourceGroup=RG-videocogsearch
-WebUIAppName=videocogsearchui
-FunctionsAppName=videocogsearch
+#=============================================================
+# Serverless Video Analytics Configuration file
+#=============================================================
+
+# Commons
+ResourceGroup="rg-videoanalytics"
+ResourceLocation="japaneast"
+
+# Functions App
+FunctionsAppName="videoanalyticsfunction"
+FunctionsAppConsumptionPlanLocation="japaneast"
+SasTokenAPIEndpoint="https://videoanalyticsfunction.azurewebsites.net/api/get-sas-token?code=xux1a3GJ3zBkb4n36PKQsnAkOBeZeCEgy2insTE4KfhoRqN1AtZLMw=="
+WebhookSubscribeAPIEndpoint="https://videoanalyticsfunction.azurewebsites.net/api/http-to-translator-queue?code=ScDWxSgQNasvYbM0Akkqe4k8o9p9KBxGALTKxKnmoR0ToKbuC95fDg=="
+
+# Logic App
+LogicAppName="videoanalyticslogic"
+
+# Web App
+WebUIAppName="videoanalyticsui"
+WebUIAppServicePlan="videoanalytics"
+
+# Azure Media Services
 AMSAADTenantDomain="microsoft.onmicrosoft.com"
-AMSRESTAPIEndpoint="https://videocogsearch.restv2.japanwest.media.azure.net/api/"
-AMSClientId="7a5d73fx-f222-492c-8402-080f9b1557d1"
-AMSClientSecret="c057e0cc-b4aa-4d68-a1ab-5996bfed9a5a"
-AMSStorageAccountName="videocogsearchams"
-AMSStorageAccountKey="6Bxx2+tUSFBi7GUXPXK4H/61ROzOp2/zb5J0icmwjoIW1WxsIXh2CK5cdC01P65Y9xaswBUJWmd0bd2+/tRqzw=="
-SourceStorageConnection="DefaultEndpointsProtocol=https;AccountName=videocogsearch;AccountKey=4zxXaMlToK7vf8MM+92OtICF/iTlohmLAId9mtmifusKeeUqF53BBiTqaSy2dmgfvIZgZV9RJXPtMwBYVGuBw==;EndpointSuffix=core.windows.net"
-CosmosDBAccountName="videocogsearch"
-CosmosDBAccountKey="lpQV80xYd67D52dz0os4iH4qc9sDMQXrTEBjNY5ZxDKjY2IW3TpshS2ZXqV1WSqzxOeGjDfz9HEXadbczkATPRg=="
-SourceStorageAccountName="videocogsearch"
-SourceStorageAccountKey="44KjfaMlToK7vf8MM+92OtICF/iTlohmLAId9mtmifusKeeUqF53BBiTqaSy2dmgabcZgZV9RJXPtMwBYVGuBw=="
-TranslatorAPIKey="1a99f56bfdb04ebc89a6549a178c1de4"
-AzureSearchServiceName="videocogsearch"
-AzureSearchAdminKey="BF205B6F596B205C00A978E92D96E12"
-TextAnalyticsAPISubscriptionKey="571eeabcda164bf5832bd3644d4de34d"
-SasTokenAPIEndpoint="https://videocogsearch.azurewebsites.net/api/get-sas-token"
-SasTokenAPIKey="zwQ6aDsDvNvE/XDZheXuaZ7LXZXgJ1UT/bExSqXQMDSsKr9fXa/JZQ=="
-VideoUploadEndpoint="https://videocogsearch.blob.core.windows.net/uploads"
+AMSRESTAPIEndpoint="https://videoanalyticsams.restv2.japaneast.media.azure.net/api/"
+AMSClientId="7a5d73fd-f122-492c-8402-080f9b1557x1"
+AMSClientSecret="c057e0db-b4aa-4d68-a1ab-5996bfe49a5a"
+
+# Storage Account attached to Azure Media Services
+AMSStorageAccountName="videoanalyticsams"
+AMSStorageAccountKey="inJZDazdj7/Jz8325KCggyTdxV4wGX04OgfXQTFWXpj77x9QZLRMSXuoM1p81QdbMUhC4uu/mC0T9OoAluEmCA=="
+
+# Storage Account for Video data source (you upload videos to this storage)
+SourceStorageAccountName="videoanalytics"
+SourceStorageAccountKey="v2PkwFoAjsWVjXkadzshKVqsDoHWEyZ6PPqL/UQNraCtW5fsDtio+MCAh9d7d/ecpIzDD5eE2/YvtH1cBNTIrAg=="
+VideoUploadingContainerName="uploads"
+
+# Cosmos DB
+CosmosDBAccountName="videoanalytics"
+CosmosDBAccountKey="j1EeL29LGjvUQQ9H1GKDCpegc8eOuQl1PoJwUduJkwSZd7h9rpU1B7EwoegnFQ2JnYDdmRfaJAYkmSgAGhuKbQ=="
+
+# Azure Search
+AzureSearchServiceName="videoanalytics"
+AzureSearchAdminKey="2A1C022AAC6C10F257CD8BFD8A61DACD"
+
+# Translator Text API (Cognitive Service)
+TranslatorAPIKey="91af7fedacb842f8b6740438842e875e"
+
+# Text Analytics API (Cognitive Services)
+TextAnalyticsAPISubscriptionKey="121354f204374c52af57e28c412b5493"

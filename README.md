@@ -5,16 +5,26 @@ Showcase Application of Serverless Video Analytics Workflow using Azure Function
 ### Architecture
 ![](images/architecture.png)
 
+Related Azure Services in the solution:
+- Azure Functions
+- Azure Logic App
+- Azure Cosmos DB
+- Azure Search
+- Azure Media Services
+- Azure Web App
+- Azure Storage (Blob, Queue)
+- Azure Text Analytics API (Cognitive Services)
+- Azure Translator Text API (Cognitive Services)
+
 ### Logic Apps Workflow
 ![](images/logicapps-workflow.png)
 
 ### Web App UI
 ![](images/webui-screenshot.png)
 
-## Install Manual
-
-To be updated soon
-
+## Deployment Procedures
+- [How to deploy the demo application (English)](docs/HOW-TO-DEPLOY.md)
+- [How to deploy the demo application (Japanese)](docs/HOW-TO-DEPLOY_ja.md)
 
 ## Contributing
 

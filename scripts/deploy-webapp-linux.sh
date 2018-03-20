@@ -5,15 +5,15 @@ cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 . $cwd/videoanalytics.conf
 
-RESOURCE_GROUP="RG-amstt-poc"
-NAME="serverlessvideoanalytics001"
-APP_SERVICE_PLAN=serverlessvideoanalytics
+RESOURCE_GROUP=$ResourceGroup
+NAME=$WebUIAppName
+APP_SERVICE_PLAN=$WebUIAppServicePlan
 #CONTAINER_IMAGE=<REGISTRY_URL>/<CONTAINER_IMAGE:TAG>
 CONTAINER_IMAGE=yoichikawasaki/serverless-video-analytics:0.0.1
 
 ## Create 
-RESOURCE_GROUP_LINUX_APP="$RESOURCE_GROUP-linux"
-az group create --name $RESOURCE_GROUP_LINUX_APP --location japanwest
+RESOURCE_GROUP_LINUX_APP="$RESOURCE_GROUP-fe"
+az group create --name $RESOURCE_GROUP_LINUX_APP --location $ResourceLocation
 
 ## Create App Service Plan (If it's App Service Plan instead of Consumption Plan)
 az appservice plan create \
@@ -39,5 +39,4 @@ az webapp config appsettings set \
     AzureSearchServiceName=$AzureSearchServiceName \
     AzureSearchAdminKey=$AzureSearchAdminKey \
     SasTokenAPIEndpoint=$SasTokenAPIEndpoint \
-    SasTokenAPIKey=$SasTokenAPIKey \
-    VideoUploadEndpoint=$VideoUploadEndpoint
+    VideoUploadEndpoint="https://$SourceStorageAccountName.blob.core.windows.net/$VideoUploadingContainerName"
