@@ -22,6 +22,8 @@ Related Azure Services in the solution:
 ### Web App UI
 ![](images/webui-screenshot.png)
 
+See also [Application Overview Video @ Youtube](https://www.youtube.com/watch?v=fgtBhoMGZBE)
+
 ## Deployment Procedures
 - [How to deploy the demo application](docs/HOW-TO-DEPLOY.md)
 
