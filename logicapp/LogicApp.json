@@ -241,7 +241,7 @@
                                     "ContentId": "@body('publish-assets')['ContentId']"
                                 },
                                 "function": {
-                                    "id": "/subscriptions/87c7c7f9-0c9f-47d1-a856-1305a0cbfd7a/resourceGroups/RG-amstt-poc/providers/Microsoft.Web/sites/videocogsearch/functions/add-key-phrases"
+                                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('functionsDeploymentResourceGroup'), '/providers/Microsoft.Web/sites/', parameters('functionsDeploymentName'), '/functions/add-key-phrases')]"
                                 }
                             },
                             "runAfter": {
@@ -257,7 +257,7 @@
                                     "ContentId": "@body('publish-assets')['ContentId']"
                                 },
                                 "function": {
-                                    "id": "/subscriptions/87c7c7f9-0c9f-47d1-a856-1305a0cbfd7a/resourceGroups/RG-amstt-poc/providers/Microsoft.Web/sites/videocogsearch/functions/feed-webvtt-caption-search"
+                                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('functionsDeploymentResourceGroup'), '/providers/Microsoft.Web/sites/', parameters('functionsDeploymentName'), '/functions/feed-webvtt-caption-search')]"
                                 }
                             },
                             "runAfter": {

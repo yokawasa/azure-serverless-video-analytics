@@ -14,8 +14,7 @@ using Microsoft.Azure.Documents.Client;
 
 private static readonly string _cosmosDBAccountName = Environment.GetEnvironmentVariable("CosmosDBAccountName");
 private static readonly string _cosmosDBAccountKey = Environment.GetEnvironmentVariable("CosmosDBAccountKey");
-//private static readonly string _textAnalyticsAPISubscriptionKey = Environment.GetEnvironmentVariable("TextAnalyticsAPISubscriptionKey");
-private static readonly string _textAnalyticsAPISubscriptionKey = "571ee6ceba164bf5832bd3644d4de34d";
+private static readonly string _textAnalyticsAPISubscriptionKey = Environment.GetEnvironmentVariable("TextAnalyticsAPISubscriptionKey");
 
 private static readonly int _textAnalyticsAPIMaxCharNum = 5000;
 
