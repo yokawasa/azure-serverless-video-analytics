@@ -23,8 +23,7 @@ Related Azure Services in the solution:
 ![](images/webui-screenshot.png)
 
 ## Deployment Procedures
-- [How to deploy the demo application (English)](docs/HOW-TO-DEPLOY.md)
-- [How to deploy the demo application (Japanese)](docs/HOW-TO-DEPLOY_ja.md)
+- [How to deploy the demo application](docs/HOW-TO-DEPLOY.md)
 
 ## Contributing
 
