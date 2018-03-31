@@ -27,7 +27,7 @@ git clone https://github.com/yokawasa/azure-serverless-video-analytics.git
 ```
 
 Then, open videoanalytics.conf and add values for the following variables in the file. 
-- azure-serverless-video-analytics/scripts/videoanalytics.conf
+- azure-serverless-video-analytics/scripts/[videoanalytics.conf](../scripts/videoanalytics.conf)
 ```
 ...
 # Commons
@@ -69,9 +69,17 @@ Setting points:
 - Storage Account Name: specify the storage account that you create in step 4
 - Storage Option: `Starndard_LSR` is enough for the sample application
 
-After the Media Service account is created, create a Service Principal and save the password. It will be needed in later steps. 
+After the Media Service account is created, create a Service Principal and save the password. It will be needed in later steps.
 
 - [Service principal authentication for Azure Media Services](https://docs.microsoft.com/en-us/azure/media-services/media-services-portal-get-started-with-aad#service-principal-authentication)
+
+ The corresponding variables in [videoanalytics.conf](../scripts/videoanalytics.conf) are:
+```
+AMSAADTenantDomain="<Azure Media Service AAD Tenant Domain>"
+AMSRESTAPIEndpoint="<Azure Media Service REST API Endpoint>"
+AMSClientId="<Azure Media Services Account Service Principal Client Id>"
+AMSClientSecret="<Azure Media Services Account Service Principal Client Secret>"
+```
 
 ### 6. Start Azure Media Services streaming endpoint
 To enable streaming, go to the Azure portal, select the Azure Media Services account which has been created, and start the default streaming endpoint.
@@ -125,7 +133,9 @@ Retrieve API key in the Azure Portal.  The key is used in later steps
 ### 11. Edit videoanalytics.conf
 
 Open videoanalytics.conf and add all related services infomation to the file. The videoanalytics.conf is used in later steps. 
-- azure-serverless-video-analytics/scripts/videoanalytics.conf
+- azure-serverless-video-analytics/scripts/[videoanalytics.conf](../scripts/videoanalytics.conf)
+
+Please refer to example configurations too: [videoanalytics.conf.example](../scripts/videoanalytics.conf.example)
 
 ### 12. Create Azure Search Schema
 Create Azure Search schemas in Azure Search Account that created in step 6 by running a following scirpt:
