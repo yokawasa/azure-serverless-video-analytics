@@ -6,8 +6,7 @@ expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 . $cwd/videoanalytics.conf
 
 RESOURCE_GROUP=$ResourceGroup
-#NAME=$SourceStorageAccountName
-NAME="videoanalytics2"
+NAME=$SourceStorageAccountName
 
 # Create Azure Storage Account for Video Processing Pipeline and Blob Container in the account
 az storage account create \
