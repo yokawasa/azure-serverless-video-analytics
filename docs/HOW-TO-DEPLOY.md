@@ -183,7 +183,7 @@ Open Logic App Designer in Logic app that you've just deployed, choose a video u
 
 ### 17. Deploy Azure Web App (Web UI)
 
-Create Azure Web App Account (Web App for Containers) and deploy containerized app into the account by running a following scirpt:
+Create Azure Web App Account and deploy an app into the account by running a following scirpt:
 ```
 # Deploying web app into Windows Web App with Free App Service plan(SKU F1)
 scripts/deploy-webapp.sh
