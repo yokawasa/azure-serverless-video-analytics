@@ -185,8 +185,10 @@ Open Logic App Designer in Logic app that you've just deployed, choose a video u
 
 Create Azure Web App Account (Web App for Containers) and deploy containerized app into the account by running a following scirpt:
 ```
-scripts/deploy-webapp-linux.sh
+# Deploying web app into Windows Web App with Free App Service plan(SKU F1)
+scripts/deploy-webapp.sh
 ```
+If you want to deploy a container based app into Web App for Container, run `deploy-webapp-linux.sh` instead of `deploy-webapp.sh`. But please be noted that Web App for Container need at least `SKU S1` App Service Plan
 
 ## Access to Web UI and Upload Sample Videos
 

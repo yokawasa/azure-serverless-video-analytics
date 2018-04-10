@@ -5,6 +5,12 @@ cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 
 cd $cwd/../webapp/lib
+if [ -d azure-documentdb-php-sdk ]
+then
+    echo "azure-documentdb-php-sdk exist, so skip package setup!!"
+    exit 0
+fi
+
 git clone https://github.com/dreamfactorysoftware/azure-documentdb-php-sdk.git
 cd azure-documentdb-php-sdk
 
