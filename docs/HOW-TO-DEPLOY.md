@@ -45,7 +45,7 @@ SourceStorageAccountName="<Video Source Storage Account Name>"
 
 ### 3. Create and configure Azure Storage Account for uploading and processing video sources
 
-Create Azure Storage Account for uploading and processing video sources, adding a blob container as a video uploading endpoint, and configure CORS for the account by running a following scirpt:
+Create Azure Storage Account for uploading and processing video sources, add a blob container as a video uploading endpoint, and configure CORS for the account by running a following scirpt:
 ```
 scripts/create-configure-source-storage.sh
 ```
@@ -128,7 +128,7 @@ Retrieve API key in the Azure Portal.  The key is used in later steps
 Sign up for `the Text Analytics API` in the Azure Portal
 - [How to sign up for Text Analytics API](https://docs.microsoft.com/ja-jp/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-signup)
 
-Retrieve API key in the Azure Portal.  The key is used in later steps
+Retrieve API key and API region/location name in the Azure Portal.  The key is used in later steps
 
 ### 11. Edit videoanalytics.conf
 

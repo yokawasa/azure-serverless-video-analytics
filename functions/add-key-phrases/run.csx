@@ -15,7 +15,7 @@ using Microsoft.Azure.Documents.Client;
 private static readonly string _cosmosDBAccountName = Environment.GetEnvironmentVariable("CosmosDBAccountName");
 private static readonly string _cosmosDBAccountKey = Environment.GetEnvironmentVariable("CosmosDBAccountKey");
 private static readonly string _textAnalyticsAPISubscriptionKey = Environment.GetEnvironmentVariable("TextAnalyticsAPISubscriptionKey");
-
+private static readonly string _textAnalyticsAPILocation = Environment.GetEnvironmentVariable("TextAnalyticsAPILocation");
 private static readonly int _textAnalyticsAPIMaxCharNum = 5000;
 
 public class Meta
@@ -67,11 +67,29 @@ public static async Task<object> Run(HttpRequestMessage req, IAsyncCollector<obj
     return req.CreateResponse(HttpStatusCode.OK);
 }
 
+private static AzureRegions ParseAzureRegions( string value)
+{
+    switch( value )
+    {
+        case "westus":
+            return AzureRegions.Westus;
+        case "westeurope":
+            return AzureRegions.Westeurope;
+        case "southeastasia":
+            return AzureRegions.Southeastasia;
+        case "eastus2":
+            return AzureRegions.Eastus2;
+        case "westcentralus":
+            return AzureRegions.Westcentralus;
+    }
+    return AzureRegions.Westus;
+}
+
 private static async Task MainAsync(string contentId, IAsyncCollector<object> outputDocument, TraceWriter log)
 {
     // Create a client.
     ITextAnalyticsAPI client = new TextAnalyticsAPI();
-    client.AzureRegion = AzureRegions.Westus;
+    client.AzureRegion = ParseAzureRegions(_textAnalyticsAPILocation);
     client.SubscriptionKey = _textAnalyticsAPISubscriptionKey;
 
     DocumentClient dbclient = new DocumentClient(

@@ -47,3 +47,5 @@ TranslatorAPIKey="91af7fedacb842f8b6740438842e875e"
 
 # Text Analytics API (Cognitive Services)
 TextAnalyticsAPISubscriptionKey="121354f204374c52af57e28c412b5493"
+# Location/Region name for your Text Analytics API account: "westus", "westeurope", "southeastasia", "eastus2", "westcentralus", etc
+TextAnalyticsAPILocation="westus"

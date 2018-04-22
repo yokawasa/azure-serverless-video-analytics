@@ -66,4 +66,5 @@ az webapp config appsettings set \
     TranslatorAPIKey=$TranslatorAPIKey \
     AzureSearchServiceName=$AzureSearchServiceName \
     AzureSearchAdminKey=$AzureSearchAdminKey \
-    TextAnalyticsAPISubscriptionKey=$TextAnalyticsAPISubscriptionKey
+    TextAnalyticsAPISubscriptionKey=$TextAnalyticsAPISubscriptionKey \
+    TextAnalyticsAPILocation=$TextAnalyticsAPILocation
