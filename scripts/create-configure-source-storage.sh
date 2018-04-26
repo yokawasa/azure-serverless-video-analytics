@@ -27,7 +27,7 @@ az storage container create  \
 # Set CORS for Blob
 az storage cors add --services b \
     --methods PUT DELETE \
-    --origins '*' \
+    --origins "*" \
     --allowed-headers "x-ms-meta-qqfilename","x-ms-blob-type","x-ms-blob-content-type","Content-Type" \
     --exposed-headers "x-ms-meta-*" \
     --max-age 200 \
