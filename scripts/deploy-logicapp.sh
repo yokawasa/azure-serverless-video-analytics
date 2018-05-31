@@ -11,22 +11,19 @@ TEMPLATE_FILE=$cwd/../logicapp/LogicApp.json
 PARAM_TEMPLATE_FILE=$cwd/../logicapp/LogicApp.parameters.json
 PARAM_FILE=$cwd/../logicapp/_LogicApp.parameters.json
 
-cp $PARAM_TEMPLATE_FILE $PARAM_FILE
-
 # Set variables
-perl -p -i -e "s,{logicAppName},$LogicAppName,g" $PARAM_FILE
-perl -p -i -e "s,{functionsDeploymentResourceGroup},$RESOURCE_GROUP,g" $PARAM_FILE
-perl -p -i -e "s,{functionsDeploymentName},$FunctionsAppName,g" $PARAM_FILE
-perl -p -i -e "s,{sourceAssetsStorageAccountName},$SourceStorageAccountName,g" $PARAM_FILE
-perl -p -i -e "s,{webhookSubscribeEndpoint},$WebhookSubscribeAPIEndpoint,g" $PARAM_FILE
+#perl -p -i -e "s,{logicAppName},$LogicAppName,g" $PARAM_FILE
+#perl -p -i -e "s,{functionsDeploymentResourceGroup},$RESOURCE_GROUP,g" $PARAM_FILE
+#perl -p -i -e "s,{functionsDeploymentName},$FunctionsAppName,g" $PARAM_FILE
+#perl -p -i -e "s,{sourceAssetsStorageAccountName},$SourceStorageAccountName,g" $PARAM_FILE
+#perl -p -i -e "s,{webhookSubscribeEndpoint},$WebhookSubscribeAPIEndpoint,g" $PARAM_FILE
 
-## Comment these. These lines won't work as expected as built-in 'sed' in MacOS isn't GNU sed
-#sed -i "s,{logicAppName},$LogicAppName,g" $PARAM_FILE
-#sed -i "s,{functionsDeploymentResourceGroup},$RESOURCE_GROUP,g" $PARAM_FILE
-#sed -i "s,{functionsDeploymentName},$FunctionsAppName,g" $PARAM_FILE
-#sed -i "s,{sourceAssetsStorageAccountName},$SourceStorageAccountName,g" $PARAM_FILE
-#sed -i "s,{uploadVideoWatchContainer},$VideoUploadingContainerName,g" $PARAM_FILE
-#sed -i "s,{webhookSubscribeEndpoint},$WebhookSubscribeAPIEndpoint,g" $PARAM_FILE
+cat $PARAM_TEMPLATE_FILE | \
+    perl -p -e "s,{logicAppName},$LogicAppName,g" | \
+    perl -p -e "s,{functionsDeploymentResourceGroup},$RESOURCE_GROUP,g" | \
+    perl -p -e "s,{functionsDeploymentName},$FunctionsAppName,g" | \
+    perl -p -e "s,{sourceAssetsStorageAccountName},$SourceStorageAccountName,g" | \
+    perl -p -e "s,{webhookSubscribeEndpoint},$WebhookSubscribeAPIEndpoint,g"  > $PARAM_FILE
 
 az group deployment create --name $NAME \
      --resource-group $RESOURCE_GROUP \
