@@ -35,20 +35,12 @@ az functionapp create --name $NAME \
 ### [NOTE] Use 'az functionapp list-consumption-locations' to view available locations
 
 
-## Zipping functions
-cd $cwd/../functions
-zip -r $ZIPFILE .
-
-## Deploying functions
-az functionapp deployment source config-zip  --name $NAME \
-    --resource-group $RESOURCE_GROUP \
-    --src $ZIPFILE
-
 ## Configure App Settings
 az webapp config appsettings set \
   -n $NAME \
   -g $RESOURCE_GROUP \
   --settings \
+    FUNCTIONS_EXTENSION_VERSION="~1" \
     AMSAADTenantDomain=$AMSAADTenantDomain \
     AMSRESTAPIEndpoint=$AMSRESTAPIEndpoint \
     AMSClientId=$AMSClientId \
@@ -68,3 +60,12 @@ az webapp config appsettings set \
     AzureSearchAdminKey=$AzureSearchAdminKey \
     TextAnalyticsAPISubscriptionKey=$TextAnalyticsAPISubscriptionKey \
     TextAnalyticsAPILocation=$TextAnalyticsAPILocation
+
+## Zipping functions
+cd $cwd/../functions
+zip -r $ZIPFILE .
+
+## Deploying functions
+az functionapp deployment source config-zip  --name $NAME \
+    --resource-group $RESOURCE_GROUP \
+    --src $ZIPFILE
